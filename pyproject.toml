@@ -1,0 +1,31 @@
+[project]
+name = "tracepost"
+version = "0.1.0"
+description = "Local-first creator metrics hub for Douyin and Xiaohongshu, with a web dashboard, CLI and MCP server for AI agents."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "zhangchong-xiaoxu" }]
+requires-python = ">=3.12"
+keywords = ["creator", "analytics", "douyin", "xiaohongshu", "mcp", "playwright"]
+dependencies = [
+    "fastapi>=0.162.0",
+    "mcp>=2.3.0,<3",
+    "playwright>=1.64.1",
+    "uvicorn>=0.54.0",
+]
+
+[project.urls]
+Repository = "https://github.com/zhangchong-xiaoxu/tracepost"
+
+[project.scripts]
+tracepost = "tracepost.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.9.13,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]
